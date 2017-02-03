@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ profissao_atual }} | {{ block.super }}
+{% endblock title %}
+
+{% block container %}
+    <div class="container">
+        <h2 class="page-header">{{ profissao_atual }}</h2>
+        <h4 class="text-warning">observação 1: os dados nesse site são apenas fictícios</h4>
+        <h4 class="text-warning">observação 2: site ainda em construção</h4>
+        <hr>
+        {% for profissional in listar_profissionais %}
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+                    <div class="caption text-center">
+                        <h5>{{ profissional.nome }}</h5>
+                        <p><a href="{{ profissional.get_absolute_url }}" class="btn btn-primary btn-sm">Detalhes</a></p>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>Ainda não existem profissionais cadastrados.</p>
+        {% endfor %}
+    </div>
+{% endblock container %}

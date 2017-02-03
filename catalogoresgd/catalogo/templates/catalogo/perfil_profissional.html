@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ perfil_profissional }} | {{ block.super }}
+{% endblock title %}
+
+{% block container %}
+    <div class="container">
+        <h3 class="page-header">{{ perfil_profissional.nome }}</h3>
+        <h4 class="text-warning">observação 1: os dados nesse site são apenas fictícios</h4>
+        <h4 class="text-warning">observação 2: site ainda em construção</h4>
+        <hr>
+        <div class="col-sm-4">
+            <a href="#" class="thumbnail">
+                <img class="img-circle" alt="Bootstrap Image Preview" src="http://placehold.it/200x200" />
+            </a>
+        </div>
+        <div class="col-sm-8 dl-horizontal">
+            <dl>
+                <dt>Idade:</dt>
+                <dd>{{ perfil_profissional.idade }} anos.</dd>
+                <dt>Sexo:</dt>
+                {% if perfil_profissional.sexo == 'M' %}
+                    <dd>Masculino.</dd>
+                {% else %}
+                    <dd>Feminino.</dd>
+                {% endif %}
+                <dt>Profissão:</dt>
+                {% for profissoes in perfil_profissional.profissao.all %}
+                    <dd> <a href="{{ profissoes.get_absolute_url }}">{{ profissoes.nome }}</a> </dd>
+                {% endfor %}
+                <dt>Experiência:</dt>
+                <dd>{{ perfil_profissional.experiencia }} anos na área.</dd>
+                <dt>Telefone:</dt>
+                <dd>{{ perfil_profissional.fone }}</dd>
+                <dt>E-mail:</dt>
+                <dd>{{ perfil_profissional.email|lower }}</dd>
+                {% comment %}
+                <!--dt>Profissão:</dt>
+                {% for profissoes in perfil_profissional.profissao.all %}
+                <dd>{{ profissoes }} </dd>
+                {% endfor %}
+                <dt>Qualificações: </dt>
+                <dd>!! lista de cursos !!</dd>
+                <dt>Recomentações: </dt>
+                <dd>!! lista de recomendações !!</dd-->
+            {% endcomment %}
+            </dl>
+        </div>
+    </div>
+{% endblock container %}
