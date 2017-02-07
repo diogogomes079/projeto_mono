@@ -43,7 +43,7 @@
     "model": "catalogo.profissao",
     "pk": 5,
     "fields": {
-        "nome": "Marcineiro",
+        "nome": "Marceneiro",
         "slug": "marcineiro",
         "criado_em": "2016-11-07T00:37:17.815Z",
         "modificado_em": "2016-11-07T00:37:17.815Z"

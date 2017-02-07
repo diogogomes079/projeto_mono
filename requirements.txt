@@ -10,4 +10,5 @@ pytz
 setuptools
 six==1.10.0
 static3==0.7.0
+django-widget-tweaks
 
