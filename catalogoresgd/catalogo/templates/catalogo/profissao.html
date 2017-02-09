@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
+{% load pagination %}
+
 {% block title %}
     {{ profissao_atual }} | {{ block.super }}
 {% endblock title %}
 
 {% block container %}
-    <div class="container">
+    <div class="row">
         <h2 class="page-header">{{ profissao_atual }}</h2>
         <h4 class="text-warning">observação 1: os dados nesse site são apenas fictícios</h4>
         <h4 class="text-warning">observação 2: site ainda em construção</h4>
@@ -24,4 +26,5 @@
             <p>Ainda não existem profissionais cadastrados.</p>
         {% endfor %}
     </div>
+    {% paginator request paginator page_obj %}
 {% endblock container %}

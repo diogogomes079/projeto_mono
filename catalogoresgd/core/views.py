@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, View
-from django.core.mail import send_mail
-from django.conf import settings
+from django.views.generic import TemplateView
+
 from .forms import ContatoForm
 
 
@@ -9,8 +8,9 @@ class IndexView(TemplateView):
     template_name = 'index.html'
 
 
-def sobre(request):
-    return render(request, 'sobre.html')
+class SobreView(TemplateView):
+    template_name = 'sobre.html'
+
 
 def contato(request):
     sucesso = False
@@ -26,3 +26,4 @@ def contato(request):
 
 
 index = IndexView.as_view()
+sobre = SobreView.as_view()
