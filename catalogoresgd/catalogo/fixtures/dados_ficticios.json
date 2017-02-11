@@ -44,9 +44,9 @@
     "pk": 5,
     "fields": {
         "nome": "Marceneiro",
-        "slug": "marcineiro",
+        "slug": "marceneiro",
         "criado_em": "2016-11-07T00:37:17.815Z",
-        "modificado_em": "2016-11-07T00:37:17.815Z"
+        "modificado_em": "2017-02-03T17:18:00.699Z"
     }
 },
 {
@@ -149,8 +149,9 @@
         "experiencia": "15",
         "sexo": "M",
         "criado_em": "2017-01-28T00:07:45.496Z",
-        "modificado_em": "2017-01-28T00:07:45.496Z",
+        "modificado_em": "2017-02-03T17:14:31.251Z",
         "profissao": [
+            2,
             5
         ]
     }
@@ -210,6 +211,47 @@
         "profissao": [
             4,
             6
+        ]
+    }
+},
+{
+    "model": "catalogo.profissional",
+    "pk": 9,
+    "fields": {
+        "nome": "Murilo Azevedo Gomes",
+        "slug": "murilo-azevedo-gomes",
+        "cpf": "85318423604",
+        "email": "MuriloAzevedoGomes@teste.com",
+        "fone": "85-96549-2915",
+        "idade": "61",
+        "experiencia": "31",
+        "sexo": "M",
+        "criado_em": "2017-02-10T16:25:45.834Z",
+        "modificado_em": "2017-02-10T16:26:53.157Z",
+        "profissao": [
+            1,
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "catalogo.profissional",
+    "pk": 10,
+    "fields": {
+        "nome": "Bruna Sousa Ferreira",
+        "slug": "bruna-sousa-ferreira",
+        "cpf": "64009559179",
+        "email": "BrunaSousaFerreira@teste.com",
+        "fone": "85-95121-9008",
+        "idade": "34",
+        "experiencia": "12",
+        "sexo": "F",
+        "criado_em": "2017-02-10T16:45:57.805Z",
+        "modificado_em": "2017-02-10T16:45:57.805Z",
+        "profissao": [
+            1,
+            3
         ]
     }
 }

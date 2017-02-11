@@ -1,8 +1,12 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-
+from django.views.generic import TemplateView, CreateView
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import get_user_model
+from django.core.urlresolvers import reverse_lazy
 from .forms import ContatoForm
 
+
+Usuario = get_user_model()
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -27,3 +31,12 @@ def contato(request):
 
 index = IndexView.as_view()
 sobre = SobreView.as_view()
+
+class RegistroView(CreateView):
+
+    form_class = UserCreationForm
+    template_name = 'cadastrar_usuario.html'
+    model = Usuario
+    success_url = reverse_lazy('home')
+
+resgistar_user = RegistroView.as_view()

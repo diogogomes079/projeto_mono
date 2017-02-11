@@ -46,10 +46,12 @@ INSTALLED_APPS = [
     # apps
     'catalogoresgd.core',
     'catalogoresgd.catalogo',
+    'catalogoresgd.accounts',
 ]
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -145,7 +147,9 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 # auth
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
-#LOGOUT_URL = ''
+LOGOUT_URL = 'logout'
+AUTH_USER_MODEL = 'accounts.Usuario'
+
 
 try:
     from .local_settings import *

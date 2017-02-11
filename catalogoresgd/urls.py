@@ -15,5 +15,6 @@ urlpatterns = [
 
     url(r'^entrar/$', login, {'template_name': 'login.html'}, name='login'),
     url(r'^sair/$', logout, {'next_page': 'home'}, name='logout'),
+    url(r'^registro/$', resgistar_user, name='registrar_user'),
     url(r'^admin/', admin.site.urls),
 ]
