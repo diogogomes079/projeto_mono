@@ -8,6 +8,7 @@ gunicorn==19.6.0
 psycopg2==2.6.2
 python-decouple==3.0
 pytz
-setuptools six==1.10.0
+setuptools
+six==1.10.0
 static3==0.7.0
 whitenoise==3.2
