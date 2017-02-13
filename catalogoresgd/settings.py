@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # libs
     'widget_tweaks',
+    'easy_thumbnails',
     #'test_without_migrations',
     #'django_extensions',
     # apps
@@ -149,8 +150,17 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
 AUTH_USER_MODEL = 'accounts.Usuario'
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'catalogoresgd.accounts.backends.ModelBackend',
+)
 
-
+#Thumbnails
+THUMBNAIL_ALIASES = {
+    '': {
+        'profissional_imagem': {'size': (200, 200), 'crop': True},
+    }
+}
 try:
     from .local_settings import *
 except ImportError:

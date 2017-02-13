@@ -35,6 +35,7 @@ class Profissional(models.Model):
     experiencia = models.CharField("Experiência", max_length=2)
     profissao = models.ManyToManyField('Profissao', verbose_name='Profissão')
     sexo = models.CharField('Sexo', max_length=1, choices=SEXO)
+    imagem = models.ImageField('Imagem', upload_to='profissionais', blank=True, null=True)
 
     criado_em = models.DateTimeField('Criado em', auto_now_add=True)
     modificado_em = models.DateTimeField('Atualizado em', auto_now=True)

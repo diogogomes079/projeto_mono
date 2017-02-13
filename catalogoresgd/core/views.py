@@ -31,12 +31,3 @@ def contato(request):
 
 index = IndexView.as_view()
 sobre = SobreView.as_view()
-
-class RegistroView(CreateView):
-
-    form_class = UserCreationForm
-    template_name = 'cadastrar_usuario.html'
-    model = Usuario
-    success_url = reverse_lazy('home')
-
-resgistar_user = RegistroView.as_view()
