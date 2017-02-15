@@ -50,13 +50,15 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'logout' %}">Sair</a></li>
-                {% else %}
-                    <li><a href="{% url 'login' %}">Entrar</a></li>
-                    <li><a href="{% url 'conta:registrar_user' %}">Registro</a></li>
-                {% endif %}
-            </ul>
+              <ul class="nav navbar-nav navbar-right">
+              {% if user.is_authenticated %}
+              <li><a href="{% url 'conta:index_conta' %}">Conta</a></li>
+              <li><a href="{% url 'logout' %}">Sair</a></li>
+              {% else %}
+              <li><a href="{% url 'login' %}">Entrar</a></li>
+              <li><a href="{% url 'accounts:register' %}">Registro</a></li>
+              {% endif %}
+              </ul>
         </div>
     </div>
 </div>
